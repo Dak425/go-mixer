@@ -1,0 +1,14 @@
+package mixer
+
+type {{ .Name -}}Collection []{{- .Name }}
+type {{ .Name -}}StringMap map[string]{{- .Name }}
+type {{ .Name -}}IntMap map[int]{{- .Name }}
+type {{ .Name -}}UIntMap map[uint]{{- .Name }}
+
+// {{ .Description }}
+type {{ .Name }} struct {{ "{" }}
+    {{ if .Extends }}{{ .Extends }}{{ end }}
+    {{ range $prop, $type := .Attributes -}}
+    {{ $prop | ToTitle }} {{ $type | Sanitize | ReplaceType }} `json:"{{- $prop -}}"`
+    {{ end }}
+{{ "}" }}

@@ -1,0 +1,1799 @@
+[
+	{
+		"name": "Achievement",
+		"extends": "",
+		"description": "Achievements are earnt by users and have various requirements.",
+		"attributes": {
+			"description": "string",
+			"name": "string",
+			"slug": "string",
+			"sparks": "uint"
+		}
+	},
+	{
+		"name": "AchievementEarning",
+		"extends": "TimeStamped",
+		"description": "An AchievementEarning represents a user's progress towards an achievement.",
+		"attributes": {
+			"Achievement": "Achievement",
+			"achievement": "string",
+			"earned": "boolean",
+			"id": "uint",
+			"progress": "number≤1",
+			"user": "uint"
+		}
+	},
+	{
+		"name": "Announcement",
+		"extends": "",
+		"description": "Announcements are triggered by Mixer staff and inform users of important information and news on Mixer.",
+		"attributes": {
+			"confetti": "number ∪ boolean",
+			"level": "string (error,warning,info,success)?",
+			"message": "string",
+			"sound": "string (whoosh,chimes,click,dudup,harp,heads-up,here-you-go,hi,incoming,ping,ring,urgent,powers)?",
+			"timeout": "number?"
+		}
+	},
+	{
+		"name": "Broadcast",
+		"extends": "",
+		"description": "A broadcast represents a single broadcast from a Channel.",
+		"attributes": {
+			"channelId": "uint",
+			"id": "UUID",
+			"isTestStream": "boolean",
+			"online": "boolean",
+			"startedAt": "IsoDate"
+		}
+	},
+	{
+		"name": "CPMAnalytic",
+		"extends": "ChannelAnalytic",
+		"description": "A metric showing the impressions and payout for a period.",
+		"attributes": {
+			"impressions": "uint",
+			"payout": "number"
+		}
+	},
+	{
+		"name": "Channel",
+		"extends": "TimeStamped",
+		"description": "A single channel within Mixer. Each channel is owned by a user, and a channel can be broadcasted to.",
+		"attributes": {
+			"audience": "string (family,teen,18+)",
+			"badgeId": "uint",
+			"bannerUrl": "string",
+			"costreamId": "UUID",
+			"coverId": "uint",
+			"description": "string",
+			"featureLevel": "-1≤integer",
+			"featured": "boolean",
+			"ftl": "uint",
+			"hasTranscodes": "boolean",
+			"hasVod": "boolean",
+			"hosteeId": "uint",
+			"id": "uint",
+			"interactive": "boolean",
+			"interactiveGameId": "uint",
+			"languageId": "string?",
+			"name": "string",
+			"numFollowers": "uint",
+			"online": "boolean",
+			"partnered": "boolean",
+			"suspended": "boolean",
+			"thumbnailId": "uint",
+			"token": "string",
+			"transcodingProfileId": "uint",
+			"typeId": "uint",
+			"userId": "uint",
+			"viewersCurrent": "uint",
+			"viewersTotal": "uint",
+			"vodsEnabled": "boolean"
+		}
+	},
+	{
+		"name": "ChannelAdvanced",
+		"extends": "Channel",
+		"description": "Augmented regular channel with additional data.",
+		"attributes": {
+			"type": "GameType",
+			"user": "UserWithGroups"
+		}
+	},
+	{
+		"name": "ChannelAnalytic",
+		"extends": "",
+		"description": "A base analytics type for channel based analytical metrics.",
+		"attributes": {
+			"channel": "uint",
+			"time": "IsoDate"
+		}
+	},
+	{
+		"name": "ChannelFeatures",
+		"extends": "",
+		"description": "A list of channel features.",
+		"attributes": {}
+	},
+	{
+		"name": "ChannelPreferences",
+		"extends": "",
+		"description": "Channel preferences are a list of options and attributes which control behaviour for the channel. Please see each property for more details.",
+		"attributes": {
+			"channel:links:allowed": "boolean?",
+			"channel:links:clickable": "boolean?",
+			"channel:notify:directPurchaseMessage": "string?",
+			"channel:notify:follow": "boolean?",
+			"channel:notify:followmessage": "string?",
+			"channel:notify:hostedBy": "string?",
+			"channel:notify:hosting": "string?",
+			"channel:notify:subscribe": "boolean?",
+			"channel:notify:subscribemessage": "string?",
+			"channel:offline:autoplayVod": "boolean?",
+			"channel:partner:submail": "string?",
+			"channel:player:muteOwn": "boolean?",
+			"channel:slowchat": "number?",
+			"channel:tweet:body": "string?",
+			"channel:tweet:enabled": "boolean?",
+			"costream:allow": "boolean",
+			"hosting:allow": "boolean",
+			"hypezone:allow": "boolean",
+			"sharetext": "string?"
+		}
+	},
+	{
+		"name": "ChannelSuggestions",
+		"extends": "",
+		"description": "Suggested channels with their beacon URLs",
+		"attributes": {
+			"actionsUrl": "string",
+			"channels": "Channel",
+			"impressionUrl": "string"
+		}
+	},
+	{
+		"name": "ChatEventRequest",
+		"extends": "",
+		"description": "Data required to create a Chat event.",
+		"attributes": {
+			"data": "object",
+			"type": "string"
+		}
+	},
+	{
+		"name": "ChatUser",
+		"extends": "",
+		"description": "Represents a user within chat for a channel and provides details about their status within the channel.",
+		"attributes": {
+			"user": "object",
+			"userId": "uint",
+			"userName": "string",
+			"userRoles": "Role"
+		}
+	},
+	{
+		"name": "CheckoutItem",
+		"extends": "",
+		"description": "One item within an user's Order.",
+		"attributes": {
+			"id": "uint",
+			"quantity": "uint"
+		}
+	},
+	{
+		"name": "ClipError",
+		"extends": "",
+		"description": "Error information for an unsuccesful clip request",
+		"attributes": {
+			"errorCode": "uint",
+			"errorMessage": "string"
+		}
+	},
+	{
+		"name": "ClipMetadata",
+		"extends": "",
+		"description": "Metadata about a clip which can be updated",
+		"attributes": {
+			"title": "string"
+		}
+	},
+	{
+		"name": "ClipProperties",
+		"extends": "",
+		"description": "Information about a clip.",
+		"attributes": {
+			"contentId": "UUID",
+			"contentLocators": "Locator",
+			"contentMaturity": "uint",
+			"durationInSeconds": "uint",
+			"expirationDate": "IsoDate",
+			"ownerChannelId": "uint",
+			"shareableId": "string",
+			"streamerChannelId": "uint",
+			"tags": "Array\u003cstring\u003e",
+			"title": "string",
+			"typeId": "uint",
+			"uploadDate": "IsoDate",
+			"viewCount": "uint"
+		}
+	},
+	{
+		"name": "ClipRequest",
+		"extends": "",
+		"description": "Information required to create a clip.",
+		"attributes": {
+			"broadcastId": "string",
+			"clipDurationInSeconds": "number?",
+			"finalStreamTimeMs": "number?",
+			"highlightTitle": "string?"
+		}
+	},
+	{
+		"name": "Confetti",
+		"extends": "",
+		"description": "Represents a confetti cannon configuration. Each channel can have is own customized confetti. The confetti cannon is triggered on subscription or direct purchase events on a channel.",
+		"attributes": {
+			"channelId": "uint",
+			"id": "uint",
+			"settings": "object"
+		}
+	},
+	{
+		"name": "ConfettiCircle",
+		"extends": "",
+		"description": "A definition for a circle within a Confetti configuration.",
+		"attributes": {
+			"colors": "Array\u003cobject\u003e",
+			"flipPeriod": "string",
+			"shape": "string",
+			"size": "string"
+		}
+	},
+	{
+		"name": "ConfettiImage",
+		"extends": "",
+		"description": "A definition for an image within a Confetti configuration.",
+		"attributes": {
+			"data": "string",
+			"scale": "string",
+			"shape": "string",
+			"spinPeriod": "string"
+		}
+	},
+	{
+		"name": "ConfettiRectangle",
+		"extends": "",
+		"description": "A definition for a rectangle within a Confetti configuration.",
+		"attributes": {
+			"colors": "Array\u003cobject\u003e",
+			"flipPeriod": "string",
+			"height": "string",
+			"shape": "string",
+			"width": "string"
+		}
+	},
+	{
+		"name": "Costream",
+		"extends": "",
+		"description": "A co-stream is a set of channels grouped together and displayed on Mixer together.",
+		"attributes": {
+			"capacity": "uint",
+			"channels": "Array\u003cobject\u003e",
+			"layout": "PlayerLayout",
+			"startedAt": "IsoDate"
+		}
+	},
+	{
+		"name": "DelveBackground",
+		"extends": "",
+		"description": "Dictates what background to display on the homepage.",
+		"attributes": {
+			"fullWidthSrc": "string",
+			"leftSrc": "string?",
+			"rightSrc": "string?"
+		}
+	},
+	{
+		"name": "DelveCarousel",
+		"extends": "",
+		"description": "A large carousel for display on the homepage.",
+		"attributes": {
+			"channels": "Array\u003cobject\u003e",
+			"type": "string (carousel)"
+		}
+	},
+	{
+		"name": "DelveChannels",
+		"extends": "",
+		"description": "A list of channel on Mixer.",
+		"attributes": {
+			"hydration": "object?",
+			"morePath": "string",
+			"style": "string?",
+			"title": "object",
+			"type": "string (channels)"
+		}
+	},
+	{
+		"name": "DelveError",
+		"extends": "",
+		"description": "Returned when we tried to get some contents for this row, but encountered an error doing so.",
+		"attributes": {
+			"originalType": "string",
+			"type": "string (error)"
+		}
+	},
+	{
+		"name": "DelveGames",
+		"extends": "",
+		"description": "A list of games streamed on Mixer.",
+		"attributes": {
+			"hydration": "object?",
+			"morePath": "string",
+			"title": "object",
+			"type": "string (games)"
+		}
+	},
+	{
+		"name": "DelveMixPlayFilters",
+		"extends": "",
+		"description": "Dictates the MixPlay games which are filterable on the browse page.",
+		"attributes": {
+			"description": "object",
+			"integrationIds": "uint",
+			"name": "object"
+		}
+	},
+	{
+		"name": "DelveOnlyOnMixer",
+		"extends": "",
+		"description": "Returned when we tried to get some contents for this row, but encountered an error doing so.",
+		"attributes": {
+			"channel": "object?",
+			"id": "number",
+			"type": "string",
+			"typeId": "number?"
+		}
+	},
+	{
+		"name": "DiscordBot",
+		"extends": "",
+		"description": "Lists the configuration for this Discord bot.",
+		"attributes": {
+			"channelId": "uint",
+			"guildId": "string",
+			"id": "uint",
+			"inviteChannel": "string",
+			"inviteSetting": "string (EVERYONE,FOLLOWERS,SUBS,NOONE)",
+			"liveAnnounceChannel": "string",
+			"liveChatChannel": "string",
+			"liveUpdateState": "boolean",
+			"roles": "Array\u003cobject\u003e",
+			"syncEmoteRoles": "uint"
+		}
+	},
+	{
+		"name": "DiscordChannel",
+		"extends": "",
+		"description": "Represents a single channel within a Discord server.",
+		"attributes": {
+			"id": "string",
+			"name": "string",
+			"private": "boolean",
+			"type": "string"
+		}
+	},
+	{
+		"name": "DiscordRole",
+		"extends": "",
+		"description": "Represents a role within a Discord server.",
+		"attributes": {
+			"assignable": "boolean",
+			"color": "string",
+			"id": "string",
+			"name": "string"
+		}
+	},
+	{
+		"name": "EmojiRankAnalytic",
+		"extends": "ChannelAnalytic",
+		"description": "A channel metric showing how many times an emoji was used in a period.",
+		"attributes": {
+			"count": "uint",
+			"emoji": "string"
+		}
+	},
+	{
+		"name": "EmoticonGroup",
+		"extends": "",
+		"description": "A list of emoticons and their coordinates within an EmoticonPack.",
+		"attributes": {
+			"Keys matching the RegEx /^:\\w+$/": "object"
+		}
+	},
+	{
+		"name": "EmoticonPack",
+		"extends": "",
+		"description": "An emoticon pack is a list of emoticons that belong to a channel.",
+		"attributes": {
+			"channelId": "uint",
+			"emoticons": "EmoticonGroup",
+			"url": "string"
+		}
+	},
+	{
+		"name": "ExpandedChannel",
+		"extends": "ChannelAdvanced",
+		"description": "Augmented ChannelAdvanced with additional properties.",
+		"attributes": {
+			"badge": "Resource",
+			"cache": "Array\u003cobject\u003e",
+			"cover": "Resource",
+			"preferences": "ChannelPreferences",
+			"thumbnail": "Resource"
+		}
+	},
+	{
+		"name": "ExpandedRedeemable",
+		"extends": "Redeemable",
+		"description": "Augmented Redeemable with additional properties",
+		"attributes": {
+			"owner": "User",
+			"redeemedBy": "User"
+		}
+	},
+	{
+		"name": "ExpandedShare",
+		"extends": "Share",
+		"description": "Augmented share with additional properties.",
+		"attributes": {
+			"user": "User"
+		}
+	},
+	{
+		"name": "ExpandedTranscodingProfile",
+		"extends": "TranscodingProfile",
+		"description": "Augments a regular transcoding profile by listing the transcodes available on this profile.",
+		"attributes": {
+			"transcodes": "TranscodingProfileTranscode"
+		}
+	},
+	{
+		"name": "FTLVideoManifest",
+		"extends": "",
+		"description": "Provides details and information about an FTL Broadcast.",
+		"attributes": {
+			"resolutions": "VideoManifestResolution",
+			"since": "IsoDate"
+		}
+	},
+	{
+		"name": "Follow",
+		"extends": "TimeStamped",
+		"description": "Represents a follow relationship between a user and a channel.",
+		"attributes": {
+			"channel": "uint",
+			"user": "uint"
+		}
+	},
+	{
+		"name": "FollowersAnalytic",
+		"extends": "ChannelAnalytic",
+		"description": "A channel metric showing how many followers the channel had at this time and the change in that metric.",
+		"attributes": {
+			"delta": "number",
+			"total": "uint",
+			"user": "number?"
+		}
+	},
+	{
+		"name": "FrontendVersion",
+		"extends": "",
+		"description": "Describes an available FrontendVersion. Users can sometime swap between frontend versions to test out new features on Mixer.",
+		"attributes": {
+			"displayName": "string",
+			"version": "string"
+		}
+	},
+	{
+		"name": "GameRankAnalytic",
+		"extends": "ChannelAnalytic",
+		"description": "A channel metric showing details about the type this channel is broadcasting.",
+		"attributes": {
+			"shared": "uint",
+			"streams": "uint",
+			"views": "uint"
+		}
+	},
+	{
+		"name": "GameType",
+		"extends": "GameTypeSimple",
+		"description": "A GameType can be set on a channel and represents the title they are broadcasting.",
+		"attributes": {
+			"description": "string",
+			"online": "uint",
+			"parent": "string",
+			"source": "string",
+			"viewersCurrent": "uint"
+		}
+	},
+	{
+		"name": "GameTypeLookup",
+		"extends": "GameTypeSimple",
+		"description": "The result from looking up a game type.",
+		"attributes": {
+			"exact": "boolean"
+		}
+	},
+	{
+		"name": "GameTypeSimple",
+		"extends": "",
+		"description": "Base game type.",
+		"attributes": {
+			"backgroundUrl": "string?",
+			"coverUrl": "string?",
+			"id": "uint",
+			"name": "string"
+		}
+	},
+	{
+		"name": "HostingSession",
+		"extends": "",
+		"description": "Base game type.",
+		"attributes": {
+			"hostees": "uint",
+			"layout": "PlayerLayout"
+		}
+	},
+	{
+		"name": "Ingest",
+		"extends": "",
+		"description": "An ingest definition. Ingests are used by streaming software to send video to Mixer.",
+		"attributes": {
+			"host": "string",
+			"name": "string",
+			"pingTest": "string",
+			"protocols": "Array\u003cobject\u003e"
+		}
+	},
+	{
+		"name": "IngestStreamAnalytic",
+		"extends": "",
+		"description": "A metric providing video details about a broadcast.",
+		"attributes": {
+			"audio_avg_nack_delay": "uint",
+			"audioo_jitter_buffer_size": "uint",
+			"audiov_avg_recovery_delay": "uint",
+			"audiov_bitrate": "uint",
+			"audiov_packet_recovered": "number",
+			"audiovo_packet_loss": "number",
+			"channel_id": "uint",
+			"ingest_id": "uint",
+			"subscribed_dist_nodes": "uint",
+			"video_avg_nack_delay": "uint",
+			"video_avg_recovery_delay": "uint",
+			"video_bitrate": "uint",
+			"video_jitter_buffer_size": "uint",
+			"video_packet_loss": "number",
+			"video_packet_recovered": "number"
+		}
+	},
+	{
+		"name": "InteractiveAnalytic",
+		"extends": "ChannelAnalytic",
+		"description": "A channel metric showing details about the type this channel is broadcasting.",
+		"attributes": {
+			"inputsGiven": "uint",
+			"playtime": "uint",
+			"sparksSpent": "object",
+			"streamLength": "uint",
+			"streams": "uint",
+			"timeToInteractive": "object",
+			"viewers": "uint"
+		}
+	},
+	{
+		"name": "InteractiveConnectionInfo",
+		"extends": "",
+		"description": "Provides connection details that can be used to connect to an interactive session on a channel.",
+		"attributes": {
+			"address": "string",
+			"influence": "number",
+			"key": "string",
+			"version": "InteractiveVersionExpanded"
+		}
+	},
+	{
+		"name": "InteractiveControls",
+		"extends": "",
+		"description": "Specifies the Interactive V1 Controls that an InteractiveVersion has.",
+		"attributes": {
+			"joysticks": "Array\u003cobject\u003e?",
+			"reportInterval": "uint",
+			"screens": "Array\u003cobject\u003e?",
+			"tactiles": "Array\u003cobject\u003e?"
+		}
+	},
+	{
+		"name": "InteractiveGame",
+		"extends": "TimeStamped",
+		"description": "An InteractiveGame is owned by a Channel and provides details about an Interactive experience or game on Mixer.",
+		"attributes": {
+			"coverUrl": "string?",
+			"description": "string",
+			"hasPublishedVersions": "boolean",
+			"id": "uint",
+			"installation": "string",
+			"name": "string",
+			"ownerId": "uint",
+			"typeId": "uint"
+		}
+	},
+	{
+		"name": "InteractiveGameListing",
+		"extends": "InteractiveGame",
+		"description": "An interactive game within a list of Interactive games. Contains additional properties to avoid extra requests.",
+		"attributes": {
+			"owner": "User",
+			"versions": "Array\u003cobject\u003e"
+		}
+	},
+	{
+		"name": "InteractiveJoyStickAnalysis",
+		"extends": "",
+		"description": "Analysis settings for a Joystick. If an analysis type is enabled results will be generated and sent to the Interactive Robot.",
+		"attributes": {
+			"coords": "object"
+		}
+	},
+	{
+		"name": "InteractiveMetric",
+		"extends": "",
+		"description": "An interactive metric represents a record for every time a channel enables interactive for any period of time",
+		"attributes": {
+			"bundle": "string",
+			"channelId": "string",
+			"id": "UUID",
+			"mixerTypeId": "string",
+			"projectId": "string",
+			"published": "boolean",
+			"publisherUserId": "string",
+			"sessionLength": "uint",
+			"timestamp": "IsoDate",
+			"totalPlaytimeHours": "uint",
+			"versionId": "string"
+		}
+	},
+	{
+		"name": "InteractiveScreenAnalysis",
+		"extends": "",
+		"description": "Analysis settings for a Screen control. If an analysis type is enabled results will be generated and sent to the Interactive Robot.",
+		"attributes": {
+			"clicks": "boolean",
+			"position": "object"
+		}
+	},
+	{
+		"name": "InteractiveTactileAnalysis",
+		"extends": "",
+		"description": "Analysis settings for a Tactile control. If an analysis type is enabled results will be generated and sent to the Interactive Robot.",
+		"attributes": {
+			"frequency": "boolean",
+			"holding": "boolean"
+		}
+	},
+	{
+		"name": "InteractiveVersion",
+		"extends": "TimeStamped",
+		"description": "A versioned instance of an InteractiveGame.",
+		"attributes": {
+			"bundle": "string",
+			"changelog": "string",
+			"controlVersion": "string (1.0,2.0)",
+			"controls": "InteractiveControls",
+			"download": "string",
+			"gameId": "uint",
+			"id": "uint",
+			"installation": "string",
+			"state": "string (draft,pending,published)",
+			"version": "string",
+			"versionOrder": "uint"
+		}
+	},
+	{
+		"name": "InteractiveVersionExpanded",
+		"extends": "TimeStamped",
+		"description": "A versioned instance of an InteractiveGame.",
+		"attributes": {
+			"bundle": "string",
+			"changelog": "string",
+			"controlVersion": "string (1.0,2.0)",
+			"controls": "InteractiveControls",
+			"download": "string",
+			"gameId": "uint",
+			"id": "uint",
+			"installation": "string",
+			"state": "string (draft,pending,published)",
+			"version": "string",
+			"versionOrder": "uint"
+		}
+	},
+	{
+		"name": "InteractiveViewerAnalytic",
+		"extends": "ChannelAnalytic",
+		"description": "A channel metric showing details about a participant in the Interactive game.",
+		"attributes": {
+			"browser": "string (chr,ff,ie,ios,sf,an)?",
+			"channelId": "number?",
+			"country": "string?",
+			"platform": "string (desktop,tablet,mobile)?",
+			"referrer": "string?"
+		}
+	},
+	{
+		"name": "Invoice",
+		"extends": "",
+		"description": "A user invoice.",
+		"attributes": {
+			"amount": "number",
+			"createdAt": "IsoDate",
+			"currency": "string",
+			"id": "uint",
+			"items": "InvoiceItem",
+			"status": "string (paid,unpaid,errored,cancelled)",
+			"user": "uint"
+		}
+	},
+	{
+		"name": "InvoiceItem",
+		"extends": "TimeStamped",
+		"description": "An item on a user's invoice.",
+		"attributes": {
+			"amount": "number",
+			"description": "string",
+			"id": "uint",
+			"invoice": "uint",
+			"quantity": "uint",
+			"relid": "uint",
+			"status": "string (paid,unpaid,errored,cancelled)",
+			"type": "string (subscription,redeemable)",
+			"user": "uint"
+		}
+	},
+	{
+		"name": "IsoDate",
+		"extends": "",
+		"description": "An ISO8601 date string.",
+		"attributes": {}
+	},
+	{
+		"name": "Language",
+		"extends": "",
+		"description": "An object representing a language.",
+		"attributes": {
+			"id": "string",
+			"name": "string"
+		}
+	},
+	{
+		"name": "LanguageCount",
+		"extends": "",
+		"description": "An object describing a count for a language.",
+		"attributes": {
+			"count": "uint",
+			"id": "string"
+		}
+	},
+	{
+		"name": "LightVideoManifest",
+		"extends": "",
+		"description": "Describes a broadcast using the Light manifest structure.",
+		"attributes": {
+			"resolutions": "VideoManifestResolution",
+			"since": "IsoDate"
+		}
+	},
+	{
+		"name": "LocaleAndString",
+		"extends": "",
+		"description": "An object representing a language specific string.",
+		"attributes": {
+			"language": "string",
+			"value": "string"
+		}
+	},
+	{
+		"name": "Locator",
+		"extends": "",
+		"description": "Information required to find a clip.",
+		"attributes": {
+			"locatorType": "string",
+			"uri": "string"
+		}
+	},
+	{
+		"name": "Notification",
+		"extends": "",
+		"description": "A single notification addressed to a user.",
+		"attributes": {
+			"payload": "object",
+			"sentAt": "IsoDate",
+			"trigger": "string",
+			"userId": "uint"
+		}
+	},
+	{
+		"name": "NotificationPreference",
+		"extends": "",
+		"description": "A user's notification preferences.",
+		"attributes": {
+			"allowsEmailMarketing": "boolean",
+			"health": "object",
+			"id": "string",
+			"lastRead": "IsoDate",
+			"liveNotifications": "Array\u003cobject\u003e",
+			"liveOnByDefault": "Array\u003cstring\u003e",
+			"notifyFollower": "Array\u003cstring\u003e",
+			"notifySubscriber": "Array\u003cstring\u003e",
+			"transports": "Array\u003cobject\u003e"
+		}
+	},
+	{
+		"name": "OAuthAuthorization",
+		"extends": "",
+		"description": "An OAuthClient which has been authorized by the user.",
+		"attributes": {
+			"client": "OAuthClient",
+			"permissions": "Array\u003cstring\u003e",
+			"userId": "uint"
+		}
+	},
+	{
+		"name": "OAuthClient",
+		"extends": "",
+		"description": "An OAuthClient is an application or tool created by a developer. They can be used to ask for access to a user's account.",
+		"attributes": {
+			"clientId": "string",
+			"hosts": "Array\u003cstring\u003e",
+			"id": "uint",
+			"logo": "string?",
+			"name": "string",
+			"website": "string?"
+		}
+	},
+	{
+		"name": "OAuthLink",
+		"extends": "",
+		"description": "Represents a linked account on another non-mixer service that this user has linked to their account.",
+		"attributes": {
+			"service": "string",
+			"serviceId": "string",
+			"userId": "number"
+		}
+	},
+	{
+		"name": "PartnershipApp",
+		"extends": "TimeStamped",
+		"description": "Contains details about a particular partnership application.",
+		"attributes": {
+			"reapplies": "IsoDate",
+			"reason": "string?",
+			"status": "string (applied,accepted,denied)"
+		}
+	},
+	{
+		"name": "PartnershipCriterion",
+		"extends": "TimeStamped",
+		"description": "A criterion that a channel must meet in order to apply for partnership.",
+		"attributes": {
+			"comparison": "string (LT,LTEQ,EQ,GTEQ,GT)",
+			"description": "string",
+			"id": "number",
+			"isEnabled": "boolean",
+			"name": "string",
+			"target": "number",
+			"type": "string"
+		}
+	},
+	{
+		"name": "PartnershipCriterionResult",
+		"extends": "",
+		"description": "The result of evaluating a partnership criterion.",
+		"attributes": {
+			"actual": "number",
+			"comparison": "string (LT,LTEQ,EQ,GTEQ,GT)",
+			"criterionId": "number",
+			"succeeded": "boolean",
+			"target": "number",
+			"type": "string"
+		}
+	},
+	{
+		"name": "PartnershipEvaluationResult",
+		"extends": "",
+		"description": "The result of evaluating whether or not a channel is eligible for partnership.",
+		"attributes": {
+			"accountAge": "PartnershipCriterionResult",
+			"daysStreamedLastMonth": "PartnershipCriterionResult",
+			"followers": "PartnershipCriterionResult",
+			"hoursStreamedLastMonth": "PartnershipCriterionResult",
+			"succeeded": "boolean",
+			"totalViewers": "PartnershipCriterionResult"
+		}
+	},
+	{
+		"name": "PartnershipExemption",
+		"extends": "TimeStamped",
+		"description": "An exemption that allows a specific channel to bypass the minimum requirements\ncheck for partnership.",
+		"attributes": {
+			"agency": "string?",
+			"approverId": "number",
+			"channelId": "number",
+			"id": "number",
+			"reason": "string?",
+			"revoked": "boolean",
+			"revokerId": "number?"
+		}
+	},
+	{
+		"name": "PartyChatCreate",
+		"extends": "",
+		"description": "Sent in the request to create a new party chat channel.",
+		"attributes": {
+			"deviceUUID": "string",
+			"protocolVersion": "number",
+			"webRtcDtlsCertificateAlgorithm": "string?",
+			"webRtcDtlsCertificateThumbprint": "string?",
+			"webRtcIcePwd": "string?",
+			"webRtcIceUfrag": "string?"
+		}
+	},
+	{
+		"name": "PartyChatLatencyRecord",
+		"extends": "",
+		"description": "Results of a latency measurement to a server.",
+		"attributes": {
+			"serverFqdn": "string",
+			"targetLocation": "string"
+		}
+	},
+	{
+		"name": "PartyChatMemberRef",
+		"extends": "",
+		"description": "Reference one user session in a party chat.",
+		"attributes": {
+			"gamertag": "string",
+			"index": "number",
+			"partyId": "UUID"
+		}
+	},
+	{
+		"name": "PartyChatServer",
+		"extends": "",
+		"description": "A server used to measure location-based latency in party chat.",
+		"attributes": {
+			"serverFqdn": "string",
+			"targetLocation": "string"
+		}
+	},
+	{
+		"name": "PartyChatSession",
+		"extends": "",
+		"description": "A Party Chat voice session.",
+		"attributes": {
+			"members": "Array\u003cobject\u003e",
+			"partyId": "UUID",
+			"serverConnectionCandidates": "Array\u003cstring\u003e"
+		}
+	},
+	{
+		"name": "PartyChatSubscription",
+		"extends": "",
+		"description": "Provided to the Mixer server, then MPSD, when the client sets up an RTA subscription. See the Book of Party Chat / MPSD reference for more information about this, and how to use it.",
+		"attributes": {
+			"active": "boolean",
+			"changeTypes": "Array\u003cstring\u003e",
+			"connection": "UUID",
+			"subscriptionId": "UUID"
+		}
+	},
+	{
+		"name": "PlayerLayout",
+		"extends": "",
+		"description": "The PlayerLayout configures the arrangement and positioning of the channels within a costream or hosting session.",
+		"attributes": {
+			"name": "string",
+			"order": "Array\u003cnumber\u003e",
+			"players": "Array\u003cobject\u003e"
+		}
+	},
+	{
+		"name": "PrivatePopulatedUser",
+		"extends": "PrivateUser",
+		"description": "A fully populater user with channel, preferences, groups and private details.",
+		"attributes": {
+			"channel": "Channel",
+			"groups": "UserGroup",
+			"preferences": "UserPreferences"
+		}
+	},
+	{
+		"name": "PrivateUser",
+		"extends": "User",
+		"description": "A fully populater user with channel, preferences, groups and private details.",
+		"attributes": {
+			"email": "string",
+			"password": "string",
+			"twoFactor": "object"
+		}
+	},
+	{
+		"name": "ProgressionActiveStorageProject",
+		"extends": "",
+		"description": "A type that contains information about progression storage that has been loaded into a channel.",
+		"attributes": {
+			"channelId": "uint",
+			"gameTypeId": "uint",
+			"progressionActive": "boolean?",
+			"projectId": "UUID",
+			"startTime": "IsoDate"
+		}
+	},
+	{
+		"name": "ProgressionActiveStorageProjectList",
+		"extends": "",
+		"description": "A type that contains a page of results from an active progression project query.",
+		"attributes": {
+			"continuationToken": "string?",
+			"results": "ProgressionActiveStorageProject"
+		}
+	},
+	{
+		"name": "ProgressionAppAccess",
+		"extends": "",
+		"description": "A type that contains key value pairs where the key is an app or game reference and the value is its permissions to a progression project.",
+		"attributes": {
+			"All keys": "ProgressionGameAccess"
+		}
+	},
+	{
+		"name": "ProgressionChannelViewerStorageLoadResult",
+		"extends": "",
+		"description": "A type that contains information about an operation to run against a player or channel viewers.",
+		"attributes": {
+			"results": "ProgressionViewerStorageLoadResult"
+		}
+	},
+	{
+		"name": "ProgressionEvent",
+		"extends": "",
+		"description": "A type that contains information about a notification event to be sent for progression storage changes.",
+		"attributes": {
+			"awardMessages": "LocaleAndString",
+			"awardMessagesDetails": "LocaleAndString",
+			"id": "UUID",
+			"maxDisplayLengthInMilliseconds": "uint",
+			"minDisplayLengthInMilliseconds": "uint",
+			"name": "string",
+			"owningProject": "UUID",
+			"type": "string (unspecified,unlock,valueUpdate)"
+		}
+	},
+	{
+		"name": "ProgressionEventList",
+		"extends": "",
+		"description": "A type that contains a page of results from a progression project events query.",
+		"attributes": {
+			"continuationToken": "string?",
+			"results": "ProgressionEvent"
+		}
+	},
+	{
+		"name": "ProgressionGameAccess",
+		"extends": "",
+		"description": "Available rights in comma delimited string:",
+		"attributes": {
+			"": ""
+		}
+	},
+	{
+		"name": "ProgressionLocalizedNotification",
+		"extends": "",
+		"description": "A type that contains information about an operation to run against a player or channel viewers.",
+		"attributes": {
+			"awardMessage": "string?",
+			"awardMessageDetails": "string?",
+			"id": "UUID",
+			"language": "string",
+			"maxDisplayLengthInMilliseconds": "uint",
+			"minDisplayLengthInMilliseconds": "uint",
+			"name": "string",
+			"type": "string (unspecified,unlock,valueUpdate)"
+		}
+	},
+	{
+		"name": "ProgressionOperation",
+		"extends": "",
+		"description": "A type that contains information about an operation to run against a player or channel viewers.",
+		"attributes": {
+			"amount": "number?",
+			"awardMessage": "string?",
+			"awardMessageDetails": "string?",
+			"maxVal": "number",
+			"minVal": "number",
+			"notificationEventId": "UUID",
+			"op": "ProgressionOperationType",
+			"sessionIds": "UUID",
+			"stat": "string",
+			"timeRestriction": "string (daily,monthly,weekly)"
+		}
+	},
+	{
+		"name": "ProgressionOperationError",
+		"extends": "",
+		"description": "A type that contains information a viewer session and failed operation.",
+		"attributes": {
+			"error": "string",
+			"sessionId": "UUID"
+		}
+	},
+	{
+		"name": "ProgressionOperationErrors",
+		"extends": "",
+		"description": "A type that contains information about failures in a partial success operation.",
+		"attributes": {
+			"errors": "ProgressionOperationError"
+		}
+	},
+	{
+		"name": "ProgressionOperationType",
+		"extends": "",
+		"description": "Available operations are:",
+		"attributes": {
+			"": ""
+		}
+	},
+	{
+		"name": "ProgressionOperations",
+		"extends": "",
+		"description": "A type that contains information about progression operations to run against a player or channel viewers.",
+		"attributes": {
+			"operations": "ProgressionOperation"
+		}
+	},
+	{
+		"name": "ProgressionPlayerStorage",
+		"extends": "",
+		"description": "A type that contains information about progression storage for a player.",
+		"attributes": {
+			"projectId": "UUID",
+			"statistics": "ProgressionStatistic"
+		}
+	},
+	{
+		"name": "ProgressionPlayerStorageList",
+		"extends": "",
+		"description": "A type that contains a page of results from an progression storage query.",
+		"attributes": {
+			"continuationToken": "string?",
+			"results": "ProgressionPlayerStorage"
+		}
+	},
+	{
+		"name": "ProgressionProject",
+		"extends": "",
+		"description": "A type that contains information about progression storage across users for a specific game.",
+		"attributes": {
+			"applicationAccess": "ProgressionAppAccess",
+			"fiveMinuteHeartbeatOperations": "ProgressionOperation",
+			"gameTypeId": "uint",
+			"id": "UUID",
+			"isPublished": "boolean",
+			"name": "string",
+			"owningUsers": "uint",
+			"xboxDecimalTitleIdAccess": "ProgressionAppAccess"
+		}
+	},
+	{
+		"name": "ProgressionProjectList",
+		"extends": "",
+		"description": "A type that contains a page of results from a progression project query.",
+		"attributes": {
+			"continuationToken": "string?",
+			"results": "ProgressionProject"
+		}
+	},
+	{
+		"name": "ProgressionStatistic",
+		"extends": "",
+		"description": "A type that contains information about a single value in progression storage.",
+		"attributes": {
+			"amount": "number",
+			"stat": "string"
+		}
+	},
+	{
+		"name": "ProgressionViewerStatisticValue",
+		"extends": "",
+		"description": "A type that contains information about a single value in progression storage.",
+		"attributes": {
+			"sessionId": "UUID",
+			"value": "number"
+		}
+	},
+	{
+		"name": "ProgressionViewerStorageLoadResult",
+		"extends": "",
+		"description": "A type that contains information about a single value in progression storage.",
+		"attributes": {
+			"channelId": "uint",
+			"project": "ProgressionActiveStorageProject",
+			"result": "string (unspecified,activated,alreadyActive,activeOnOtherChannel,activationFailed)",
+			"statusCode": "uint"
+		}
+	},
+	{
+		"name": "ProgressionViewersStatisticValues",
+		"extends": "",
+		"description": "A type that contains information about a single value in progression storage.",
+		"attributes": {
+			"results": "ProgressionViewerStatisticValue",
+			"stat": "string"
+		}
+	},
+	{
+		"name": "Recording",
+		"extends": "TimeStamped",
+		"description": "Details about a recorded Broadcast from a channel.",
+		"attributes": {
+			"channelId": "uint",
+			"duration": "number",
+			"expiresAt": "IsoDate",
+			"id": "uint",
+			"name": "string?",
+			"seen": "boolean?",
+			"state": "string (PROCESSING,AVAILABLE,DELETED)",
+			"typeId": "uint",
+			"viewed": "boolean?",
+			"viewsTotal": "uint",
+			"vods": "VOD"
+		}
+	},
+	{
+		"name": "RecurringPayment",
+		"extends": "TimeStamped",
+		"description": "A recurring payment is a payment which will continue to be charged to the user every period until it is canceled. These are used for subscriptions and Mixer Pro.",
+		"attributes": {
+			"cancelled": "boolean",
+			"gateway": "string (braintree,stripe)",
+			"id": "uint",
+			"relid": "uint",
+			"status": "string (active,cancelled,failed,before_gateway)",
+			"timesPaid": "uint",
+			"type": "string (subscription)",
+			"user": "uint"
+		}
+	},
+	{
+		"name": "RecurringPaymentExpanded",
+		"extends": "RecurringPayment",
+		"description": "An augmented recurring payment with additional details, used in Details views. Provides nested objects such as the owner of the RecurringPayment.",
+		"attributes": {
+			"subscription": "SubscriptionExpanded"
+		}
+	},
+	{
+		"name": "Redeemable",
+		"extends": "TimeStamped",
+		"description": "A redeemable is an item granted to a user that can be exchanged for an item or activity. These are currently only used for Mixer Pro membership and channel subscriptions.",
+		"attributes": {
+			"code": "string?",
+			"id": "uint",
+			"meta": "object",
+			"ownerId": "uint",
+			"redeemedAt": "IsoDate",
+			"redeemedById": "uint",
+			"state": "string (unpaid,paid,redeemed)",
+			"type": "string (Pro,Subscription)"
+		}
+	},
+	{
+		"name": "RedeemablePartner",
+		"extends": "TimeStamped",
+		"description": "Extra information added to a redeemable when it is a Partner's monthly subscription / Pro codes.",
+		"attributes": {
+			"id": "uint",
+			"partnerId": "uint",
+			"redeemableId": "uint"
+		}
+	},
+	{
+		"name": "Resource",
+		"extends": "",
+		"description": "Resources are general use items that are stored and linked to other entities within Mixer.They usually represent images or backgrounds for a channel or user.",
+		"attributes": {
+			"id": "uint",
+			"meta": "object?",
+			"relid": "uint",
+			"remotePath": "string",
+			"store": "string (s3)",
+			"type": "string",
+			"url": "string"
+		}
+	},
+	{
+		"name": "Role",
+		"extends": "",
+		"description": "Available roles are:",
+		"attributes": {
+			"": ""
+		}
+	},
+	{
+		"name": "SemVer",
+		"extends": "",
+		"description": "A semantic version number.",
+		"attributes": {}
+	},
+	{
+		"name": "Session",
+		"extends": "",
+		"description": "Provides details about a Mixer user's session.",
+		"attributes": {
+			"expires": "UnixTimestampMillis",
+			"id": "string",
+			"ip": "string",
+			"meta": "object"
+		}
+	},
+	{
+		"name": "Share",
+		"extends": "TimeStamped",
+		"description": "A share allows a user to share an entity with another user. Currently this is only used for InteractiveGames.",
+		"attributes": {
+			"code": "string?",
+			"id": "uint",
+			"relid": "string",
+			"type": "string (interactiveGameDraft)",
+			"userId": "uint"
+		}
+	},
+	{
+		"name": "SocialInfo",
+		"extends": "",
+		"description": "The social information for a channel.",
+		"attributes": {
+			"discord": "string",
+			"facebook": "string",
+			"player": "string",
+			"twitter": "string",
+			"verified": "Array\u003cstring\u003e",
+			"youtube": "string"
+		}
+	},
+	{
+		"name": "StreamHostsAnalytic",
+		"extends": "ChannelAnalytic",
+		"description": "Metric showing when a channel is hosted.",
+		"attributes": {
+			"hostee": "uint",
+			"hoster": "uint"
+		}
+	},
+	{
+		"name": "StreamSessionsAnalytic",
+		"extends": "ChannelAnalytic",
+		"description": "Metric showing a channel going online or offline.",
+		"attributes": {
+			"duration": "uint",
+			"online": "boolean",
+			"partnered": "boolean",
+			"type": "uint"
+		}
+	},
+	{
+		"name": "StreamViewer",
+		"extends": "",
+		"description": "A stream viewer represents a record for every time a viewer watches a stream for any period of time",
+		"attributes": {
+			"broadcastId": "string",
+			"browser": "string",
+			"channelId": "string",
+			"costreamDepth": "string",
+			"country": "string",
+			"durationInSeconds": "number",
+			"id": "UUID",
+			"partnered": "boolean",
+			"platform": "string",
+			"startedAt": "IsoDate",
+			"typeId": "string",
+			"userId": "string"
+		}
+	},
+	{
+		"name": "SubRevenueAnalytic",
+		"extends": "ChannelAnalytic",
+		"description": "A channel metric that shows when a channel's subscription revenue changes.",
+		"attributes": {
+			"count": "uint",
+			"gateway": "string (redeemable,stripe,braintree)",
+			"gross": "number",
+			"total": "number"
+		}
+	},
+	{
+		"name": "Subscription",
+		"extends": "TimeStamped",
+		"description": "A subscription lists details about a user's subscription to a resource.",
+		"attributes": {
+			"cancelled": "boolean",
+			"expiresAt": "IsoDate",
+			"id": "uint",
+			"resourceId": "uint",
+			"resourceType": "string?",
+			"status": "string (active,expired,pending)"
+		}
+	},
+	{
+		"name": "SubscriptionExpanded",
+		"extends": "Subscription",
+		"description": "The subscription belonging to this payment.",
+		"attributes": {
+			"group": "UserGroup",
+			"user": "User"
+		}
+	},
+	{
+		"name": "SubscriptionPlan",
+		"extends": "",
+		"description": "Details on a subscription plan",
+		"attributes": {
+			"amount": "string",
+			"currency": "string",
+			"id": "string",
+			"name": "string",
+			"type": "string"
+		}
+	},
+	{
+		"name": "SubscriptionWithGroup",
+		"extends": "Subscription",
+		"description": "A subscription with added group information as a nested object.",
+		"attributes": {
+			"Group": "UserGroup",
+			"group": "uint"
+		}
+	},
+	{
+		"name": "SubscriptionsAnalytic",
+		"extends": "ChannelAnalytic",
+		"description": "A channel metric that shows when a subscription was made to a channel.",
+		"attributes": {
+			"delta": "number",
+			"total": "uint",
+			"user": "uint"
+		}
+	},
+	{
+		"name": "Team",
+		"extends": "TimeStamped",
+		"description": "A team is a group of users.",
+		"attributes": {
+			"backgroundUrl": "string?",
+			"description": "string?",
+			"id": "uint",
+			"logoUrl": "string?",
+			"name": "string",
+			"ownerId": "uint",
+			"social": "SocialInfo",
+			"token": "string"
+		}
+	},
+	{
+		"name": "TeamMembership",
+		"extends": "TimeStamped",
+		"description": "Provides details about the membership of a user to a team.",
+		"attributes": {
+			"accepted": "boolean",
+			"id": "uint",
+			"teamId": "uint",
+			"userId": "uint"
+		}
+	},
+	{
+		"name": "TeamMembershipExpanded",
+		"extends": "TeamMembership",
+		"description": "A team membership expanded with additional properties including nested relations.",
+		"attributes": {
+			"isPrimary": "boolean",
+			"owner": "User",
+			"teamMembership": "TeamMembership"
+		}
+	},
+	{
+		"name": "TestStreamSetting",
+		"extends": "",
+		"description": "Lists the test stream settings for a Channel.",
+		"attributes": {
+			"hoursLastReset": "IsoDate",
+			"hoursQuota": "number",
+			"hoursRemaining": "number",
+			"hoursResetIntervalInDays": "uint",
+			"id": "uint",
+			"isActive": "boolean"
+		}
+	},
+	{
+		"name": "TimeStamped",
+		"extends": "",
+		"description": "A type that contains information about creation, update and deletion dates.",
+		"attributes": {
+			"createdAt": "IsoDate",
+			"deletedAt": "IsoDate",
+			"updatedAt": "IsoDate"
+		}
+	},
+	{
+		"name": "TranscodingProfile",
+		"extends": "",
+		"description": "A transcoding profile controls the transcoding options for a channel.",
+		"attributes": {
+			"id": "uint",
+			"name": "string"
+		}
+	},
+	{
+		"name": "TranscodingProfileTranscode",
+		"extends": "",
+		"description": "Represents a single transcode option for a channel.",
+		"attributes": {
+			"bitrate": "uint",
+			"fps": "uint",
+			"height": "uint",
+			"id": "uint",
+			"name": "string",
+			"requiresPartner": "boolean",
+			"title": "string",
+			"width": "uint"
+		}
+	},
+	{
+		"name": "TypeInformation",
+		"extends": "",
+		"description": "Describes a type stored in the Mixer backend.",
+		"attributes": {
+			"aliases": "Array\u003cstring\u003e?",
+			"availableAt": "IsoDate",
+			"backgroundUrl": "string?",
+			"coverUrl": "string?",
+			"description": "string?",
+			"id": "string",
+			"name": "string?",
+			"online": "number",
+			"parent": "string",
+			"source": "string?",
+			"titles": "TypeTitle",
+			"verified": "boolean",
+			"viewersCurrent": "number"
+		}
+	},
+	{
+		"name": "TypeTitle",
+		"extends": "",
+		"description": "Describes a title associated with a type.",
+		"attributes": {
+			"aumId": "string?",
+			"kglId": "string?",
+			"processName": "string?",
+			"productId": "string?",
+			"titleId": "number?"
+		}
+	},
+	{
+		"name": "UUID",
+		"extends": "",
+		"description": "A universally unique identifier (UUID).",
+		"attributes": {}
+	},
+	{
+		"name": "UnixTimestampMillis",
+		"extends": "uint",
+		"description": "A unix timestamp with milliseconds.",
+		"attributes": {}
+	},
+	{
+		"name": "User",
+		"extends": "TimeStamped",
+		"description": "A user is a person on Mixer; they can sign in and interact with the site. Each user owns a channel, which they can broadcast to.",
+		"attributes": {
+			"avatarUrl": "string?",
+			"bio": "string?",
+			"email": "string?",
+			"experience": "uint",
+			"id": "uint",
+			"level": "uint",
+			"primaryTeam": "uint",
+			"social": "SocialInfo",
+			"sparks": "uint",
+			"username": "string",
+			"verified": "boolean"
+		}
+	},
+	{
+		"name": "UserGroup",
+		"extends": "TimeStamped",
+		"description": "A Group which a user can belong to can control features or access controls throughout Mixer.",
+		"attributes": {
+			"id": "uint",
+			"name": "Role"
+		}
+	},
+	{
+		"name": "UserInteractiveMetric",
+		"extends": "",
+		"description": "A user interactive metric represents a record for every time a user views an channel with interactive running for any period of time",
+		"attributes": {
+			"browser": "string",
+			"channelId": "string",
+			"id": "UUID",
+			"inputsGiven": "uint",
+			"platform": "string",
+			"playtime": "uint",
+			"referrer": "string",
+			"region": "string",
+			"sparksSpent": "uint",
+			"timeToInteract": "uint",
+			"timestamp": "IsoDate",
+			"userId": "string",
+			"versionId": "string"
+		}
+	},
+	{
+		"name": "UserLog",
+		"extends": "",
+		"description": "A UserLog entry lists events and changes made to a user.",
+		"attributes": {
+			"createdAt": "IsoDate",
+			"event": "string",
+			"eventData": "object?",
+			"id": "uint",
+			"source": "string (GUEST,SELF,APP,INTERNAL,ADMIN)",
+			"sourceData": "object?",
+			"userId": "uint"
+		}
+	},
+	{
+		"name": "UserPreferences",
+		"extends": "",
+		"description": "Object containing user preferences.",
+		"attributes": {
+			"channel:mature:allowed": "boolean?",
+			"channel:notifications": "object?",
+			"channel:player:forceflash": "boolean?",
+			"chat:chromakey": "boolean?",
+			"chat:colors": "boolean?",
+			"chat:lurkmode": "boolean?",
+			"chat:sounds:html5": "boolean?",
+			"chat:sounds:play": "boolean?",
+			"chat:sounds:volume": "number≤1?",
+			"chat:tagging": "boolean?",
+			"chat:timestamps": "boolean?",
+			"chat:whispers": "boolean?"
+		}
+	},
+	{
+		"name": "UserWithChannel",
+		"extends": "User",
+		"description": "A User object with an embedded Channel.",
+		"attributes": {
+			"channel": "Channel"
+		}
+	},
+	{
+		"name": "UserWithGroups",
+		"extends": "User",
+		"description": "A User object with an embedded array of groups they belong to.",
+		"attributes": {
+			"groups": "UserGroup"
+		}
+	},
+	{
+		"name": "VOD",
+		"extends": "TimeStamped",
+		"description": "A VOD is a recorded broadcast which can be watched again on Mixer.",
+		"attributes": {
+			"baseUrl": "string",
+			"data": "object?",
+			"format": "string (hls,raw,dash,thumbnail,chat)",
+			"id": "uint",
+			"recordingId": "uint"
+		}
+	},
+	{
+		"name": "VideoManifestResolution",
+		"extends": "",
+		"description": "A resoloution available for a video manifest.",
+		"attributes": {
+			"bitrate": "uint",
+			"hasVideo": "boolean",
+			"height": "uint",
+			"name": "string",
+			"slug": "string",
+			"width": "uint"
+		}
+	},
+	{
+		"name": "VideoSettings",
+		"extends": "",
+		"description": "Video settings linked to a user's channel",
+		"attributes": {
+			"isLightstreamEnabled": "boolean"
+		}
+	},
+	{
+		"name": "ViewerAnalytic",
+		"extends": "ChannelAnalytic",
+		"description": "A channel metric, which contains the number of anonymous and authenticated Mixer users at a point in time.",
+		"attributes": {
+			"anon": "uint",
+			"authed": "uint"
+		}
+	},
+	{
+		"name": "ViewerCount",
+		"extends": "",
+		"description": "A channel metric showing how many viewers and of what type were watching the channel at a set point in time.",
+		"attributes": {
+			"anon": "uint",
+			"authed": "uint",
+			"time": "IsoDate"
+		}
+	},
+	{
+		"name": "ViewerMetricAnalytic",
+		"extends": "ChannelAnalytic",
+		"description": "A channel metric showing details about a viewer on a channel.",
+		"attributes": {
+			"browser": "string (chr,ff,ie,ios,sf,an)?",
+			"country": "string?",
+			"platform": "string (desktop,tablet,mobile)?"
+		}
+	},
+	{
+		"name": "ViewerSessionCountAnalytic",
+		"extends": "ChannelAnalytic",
+		"description": "A metric showing the number of viewers in a period on a channel.",
+		"attributes": {
+			"count": "uint"
+		}
+	},
+	{
+		"name": "Webhook",
+		"extends": "",
+		"description": "A registered webhook. For more information about webhooks, see aka.ms/mixrpokr.",
+		"attributes": {
+			"deactivationReason": "object?",
+			"events": "Array\u003cstring\u003e",
+			"expiresAt": "IsoDate",
+			"id": "UUID",
+			"isActive": "boolean",
+			"kind": "string (web)",
+			"renewUrl": "string",
+			"url": "string"
+		}
+	},
+	{
+		"name": "XblFriendsResponse",
+		"extends": "",
+		"description": "Response data for call to get Xbox Live friends",
+		"attributes": {
+			"avatarUrl": "string",
+			"channelId": "uint",
+			"level": "uint",
+			"online": "boolean",
+			"userId": "uint",
+			"username": "string"
+		}
+	}
+]
