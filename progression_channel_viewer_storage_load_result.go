@@ -1,0 +1,11 @@
+package structs
+
+type ProgressionChannelViewerStorageLoadResultCollection []ProgressionChannelViewerStorageLoadResult
+type ProgressionChannelViewerStorageLoadResultStringMap map[string]ProgressionChannelViewerStorageLoadResult
+type ProgressionChannelViewerStorageLoadResultIntMap map[int]ProgressionChannelViewerStorageLoadResult
+type ProgressionChannelViewerStorageLoadResultUIntMap map[uint]ProgressionChannelViewerStorageLoadResult
+
+// A type that contains information about an operation to run against a player or channel viewers.
+type ProgressionChannelViewerStorageLoadResult struct {
+	Results ProgressionViewerStorageLoadResult `json:"results"`
+}

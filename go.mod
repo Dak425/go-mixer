@@ -1,4 +1,4 @@
-module github.com/Dak425/go-mixer
+module github.com/Dak425/go-mixer-structs
 
 go 1.12
 
