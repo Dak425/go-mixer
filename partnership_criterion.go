@@ -1,4 +1,4 @@
-package structs
+package mixerstructs
 
 type PartnershipCriterionCollection []PartnershipCriterion
 type PartnershipCriterionStringMap map[string]PartnershipCriterion

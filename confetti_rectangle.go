@@ -1,4 +1,4 @@
-package structs
+package mixerstructs
 
 type ConfettiRectangleCollection []ConfettiRectangle
 type ConfettiRectangleStringMap map[string]ConfettiRectangle

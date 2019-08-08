@@ -1,4 +1,4 @@
-package structs
+package mixerstructs
 
 type TypeInformationCollection []TypeInformation
 type TypeInformationStringMap map[string]TypeInformation

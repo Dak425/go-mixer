@@ -1,4 +1,4 @@
-package structs
+package mixerstructs
 
 type DiscordBotCollection []DiscordBot
 type DiscordBotStringMap map[string]DiscordBot

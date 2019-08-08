@@ -1,4 +1,4 @@
-package structs
+package mixerstructs
 
 type DelveChannelsCollection []DelveChannels
 type DelveChannelsStringMap map[string]DelveChannels

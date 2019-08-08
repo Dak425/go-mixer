@@ -1,4 +1,4 @@
-package structs
+package mixerstructs
 
 type ChatEventRequestCollection []ChatEventRequest
 type ChatEventRequestStringMap map[string]ChatEventRequest

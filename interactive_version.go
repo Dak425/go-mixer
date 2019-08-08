@@ -1,4 +1,4 @@
-package structs
+package mixerstructs
 
 type InteractiveVersionCollection []InteractiveVersion
 type InteractiveVersionStringMap map[string]InteractiveVersion

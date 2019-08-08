@@ -1,4 +1,4 @@
-package structs
+package mixerstructs
 
 type TestStreamSettingCollection []TestStreamSetting
 type TestStreamSettingStringMap map[string]TestStreamSetting

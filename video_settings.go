@@ -1,4 +1,4 @@
-package structs
+package mixerstructs
 
 type VideoSettingsCollection []VideoSettings
 type VideoSettingsStringMap map[string]VideoSettings

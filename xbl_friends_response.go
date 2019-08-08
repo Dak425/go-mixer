@@ -1,4 +1,4 @@
-package structs
+package mixerstructs
 
 type XblFriendsResponseCollection []XblFriendsResponse
 type XblFriendsResponseStringMap map[string]XblFriendsResponse

@@ -1,4 +1,4 @@
-package structs
+package mixerstructs
 
 type LanguageCountCollection []LanguageCount
 type LanguageCountStringMap map[string]LanguageCount

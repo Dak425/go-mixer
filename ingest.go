@@ -1,4 +1,4 @@
-package structs
+package mixerstructs
 
 type IngestCollection []Ingest
 type IngestStringMap map[string]Ingest

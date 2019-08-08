@@ -1,4 +1,4 @@
-package structs
+package mixerstructs
 
 type EmoticonCollection []Emoticon
 type EmoticonStringMap map[string]Emoticon

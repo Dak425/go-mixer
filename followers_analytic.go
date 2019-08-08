@@ -1,4 +1,4 @@
-package structs
+package mixerstructs
 
 type FollowersAnalyticCollection []FollowersAnalytic
 type FollowersAnalyticStringMap map[string]FollowersAnalytic

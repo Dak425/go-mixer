@@ -1,4 +1,4 @@
-package structs
+package mixerstructs
 
 type ChannelSuggestionsCollection []ChannelSuggestions
 type ChannelSuggestionsStringMap map[string]ChannelSuggestions

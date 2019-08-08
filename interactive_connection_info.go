@@ -1,4 +1,4 @@
-package structs
+package mixerstructs
 
 type InteractiveConnectionInfoCollection []InteractiveConnectionInfo
 type InteractiveConnectionInfoStringMap map[string]InteractiveConnectionInfo

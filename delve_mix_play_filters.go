@@ -1,4 +1,4 @@
-package structs
+package mixerstructs
 
 type DelveMixPlayFiltersCollection []DelveMixPlayFilters
 type DelveMixPlayFiltersStringMap map[string]DelveMixPlayFilters

@@ -1,4 +1,4 @@
-package structs
+package mixerstructs
 
 type ViewerCountCollection []ViewerCount
 type ViewerCountStringMap map[string]ViewerCount

@@ -1,4 +1,4 @@
-package structs
+package mixerstructs
 
 type ProtocolCollection []Protocol
 type ProtocolStringMap map[string]Protocol

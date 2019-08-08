@@ -1,4 +1,4 @@
-package structs
+package mixerstructs
 
 type DelveGamesCollection []DelveGames
 type DelveGamesStringMap map[string]DelveGames

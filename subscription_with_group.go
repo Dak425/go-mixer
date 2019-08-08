@@ -1,4 +1,4 @@
-package structs
+package mixerstructs
 
 type SubscriptionWithGroupCollection []SubscriptionWithGroup
 type SubscriptionWithGroupStringMap map[string]SubscriptionWithGroup

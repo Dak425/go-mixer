@@ -1,4 +1,4 @@
-package structs
+package mixerstructs
 
 type FrontendVersionCollection []FrontendVersion
 type FrontendVersionStringMap map[string]FrontendVersion

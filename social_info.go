@@ -1,4 +1,4 @@
-package structs
+package mixerstructs
 
 type SocialInfoCollection []SocialInfo
 type SocialInfoStringMap map[string]SocialInfo

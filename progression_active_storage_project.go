@@ -1,4 +1,4 @@
-package structs
+package mixerstructs
 
 type ProgressionActiveStorageProjectCollection []ProgressionActiveStorageProject
 type ProgressionActiveStorageProjectStringMap map[string]ProgressionActiveStorageProject

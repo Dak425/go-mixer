@@ -1,4 +1,4 @@
-package structs
+package mixerstructs
 
 type ProgressionOperationErrorCollection []ProgressionOperationError
 type ProgressionOperationErrorStringMap map[string]ProgressionOperationError

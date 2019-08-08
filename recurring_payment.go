@@ -1,4 +1,4 @@
-package structs
+package mixerstructs
 
 type RecurringPaymentCollection []RecurringPayment
 type RecurringPaymentStringMap map[string]RecurringPayment

@@ -1,4 +1,4 @@
-package structs
+package mixerstructs
 
 type GameRankAnalyticCollection []GameRankAnalytic
 type GameRankAnalyticStringMap map[string]GameRankAnalytic

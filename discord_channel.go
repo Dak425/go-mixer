@@ -1,4 +1,4 @@
-package structs
+package mixerstructs
 
 type DiscordChannelCollection []DiscordChannel
 type DiscordChannelStringMap map[string]DiscordChannel

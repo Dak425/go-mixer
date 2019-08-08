@@ -1,4 +1,4 @@
-package structs
+package mixerstructs
 
 type StreamHostsAnalyticCollection []StreamHostsAnalytic
 type StreamHostsAnalyticStringMap map[string]StreamHostsAnalytic

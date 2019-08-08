@@ -1,4 +1,4 @@
-package structs
+package mixerstructs
 
 type PartyChatMemberRefCollection []PartyChatMemberRef
 type PartyChatMemberRefStringMap map[string]PartyChatMemberRef

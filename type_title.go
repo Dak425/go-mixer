@@ -1,4 +1,4 @@
-package structs
+package mixerstructs
 
 type TypeTitleCollection []TypeTitle
 type TypeTitleStringMap map[string]TypeTitle

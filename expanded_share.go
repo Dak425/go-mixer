@@ -1,4 +1,4 @@
-package structs
+package mixerstructs
 
 type ExpandedShareCollection []ExpandedShare
 type ExpandedShareStringMap map[string]ExpandedShare

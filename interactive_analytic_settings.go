@@ -1,4 +1,4 @@
-package structs
+package mixerstructs
 
 type InteractiveAnalyticSettings struct {
 	Mean   bool `json:"mean"`

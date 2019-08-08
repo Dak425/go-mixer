@@ -1,4 +1,4 @@
-package structs
+package mixerstructs
 
 type ProgressionLocalizedNotificationCollection []ProgressionLocalizedNotification
 type ProgressionLocalizedNotificationStringMap map[string]ProgressionLocalizedNotification

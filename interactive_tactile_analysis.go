@@ -1,4 +1,4 @@
-package structs
+package mixerstructs
 
 type InteractiveTactileAnalysisCollection []InteractiveTactileAnalysis
 type InteractiveTactileAnalysisStringMap map[string]InteractiveTactileAnalysis

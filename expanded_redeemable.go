@@ -1,4 +1,4 @@
-package structs
+package mixerstructs
 
 type ExpandedRedeemableCollection []ExpandedRedeemable
 type ExpandedRedeemableStringMap map[string]ExpandedRedeemable

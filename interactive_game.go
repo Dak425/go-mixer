@@ -1,4 +1,4 @@
-package structs
+package mixerstructs
 
 type InteractiveGameCollection []InteractiveGame
 type InteractiveGameStringMap map[string]InteractiveGame

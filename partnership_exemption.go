@@ -1,4 +1,4 @@
-package structs
+package mixerstructs
 
 type PartnershipExemptionCollection []PartnershipExemption
 type PartnershipExemptionStringMap map[string]PartnershipExemption

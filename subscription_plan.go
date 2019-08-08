@@ -1,4 +1,4 @@
-package structs
+package mixerstructs
 
 type SubscriptionPlanCollection []SubscriptionPlan
 type SubscriptionPlanStringMap map[string]SubscriptionPlan

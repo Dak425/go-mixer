@@ -1,4 +1,4 @@
-package structs
+package mixerstructs
 
 type ProgressionViewerStatisticValueCollection []ProgressionViewerStatisticValue
 type ProgressionViewerStatisticValueStringMap map[string]ProgressionViewerStatisticValue

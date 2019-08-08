@@ -1,4 +1,4 @@
-package structs
+package mixerstructs
 
 type ResourceCollection []Resource
 type ResourceStringMap map[string]Resource

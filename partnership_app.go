@@ -1,4 +1,4 @@
-package structs
+package mixerstructs
 
 type PartnershipAppCollection []PartnershipApp
 type PartnershipAppStringMap map[string]PartnershipApp

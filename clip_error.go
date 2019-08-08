@@ -1,4 +1,4 @@
-package structs
+package mixerstructs
 
 type ClipErrorCollection []ClipError
 type ClipErrorStringMap map[string]ClipError

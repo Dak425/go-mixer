@@ -1,4 +1,4 @@
-package structs
+package mixerstructs
 
 type DelveCarouselCollection []DelveCarousel
 type DelveCarouselStringMap map[string]DelveCarousel

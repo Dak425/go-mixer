@@ -1,4 +1,4 @@
-package structs
+package mixerstructs
 
 type LocaleAndStringCollection []LocaleAndString
 type LocaleAndStringStringMap map[string]LocaleAndString

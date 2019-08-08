@@ -1,4 +1,4 @@
-package structs
+package mixerstructs
 
 type InteractiveAnalyticCollection []InteractiveAnalytic
 type InteractiveAnalyticStringMap map[string]InteractiveAnalytic

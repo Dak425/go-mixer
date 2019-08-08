@@ -1,4 +1,4 @@
-package structs
+package mixerstructs
 
 type InvoiceCollection []Invoice
 type InvoiceStringMap map[string]Invoice

@@ -1,4 +1,4 @@
-package structs
+package mixerstructs
 
 type DiscordRoleCollection []DiscordRole
 type DiscordRoleStringMap map[string]DiscordRole

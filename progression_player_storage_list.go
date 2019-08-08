@@ -1,4 +1,4 @@
-package structs
+package mixerstructs
 
 type ProgressionPlayerStorageListCollection []ProgressionPlayerStorageList
 type ProgressionPlayerStorageListStringMap map[string]ProgressionPlayerStorageList

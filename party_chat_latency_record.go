@@ -1,4 +1,4 @@
-package structs
+package mixerstructs
 
 type PartyChatLatencyRecordCollection []PartyChatLatencyRecord
 type PartyChatLatencyRecordStringMap map[string]PartyChatLatencyRecord

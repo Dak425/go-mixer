@@ -1,4 +1,4 @@
-package structs
+package mixerstructs
 
 type TeamMembershipExpandedCollection []TeamMembershipExpanded
 type TeamMembershipExpandedStringMap map[string]TeamMembershipExpanded

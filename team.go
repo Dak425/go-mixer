@@ -1,4 +1,4 @@
-package structs
+package mixerstructs
 
 type TeamCollection []Team
 type TeamStringMap map[string]Team

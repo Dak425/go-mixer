@@ -1,4 +1,4 @@
-package structs
+package mixerstructs
 
 type PrivatePopulatedUserCollection []PrivatePopulatedUser
 type PrivatePopulatedUserStringMap map[string]PrivatePopulatedUser

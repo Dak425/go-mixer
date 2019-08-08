@@ -1,4 +1,4 @@
-package structs
+package mixerstructs
 
 type SubscriptionsAnalyticCollection []SubscriptionsAnalytic
 type SubscriptionsAnalyticStringMap map[string]SubscriptionsAnalytic

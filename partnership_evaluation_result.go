@@ -1,4 +1,4 @@
-package structs
+package mixerstructs
 
 type PartnershipEvaluationResultCollection []PartnershipEvaluationResult
 type PartnershipEvaluationResultStringMap map[string]PartnershipEvaluationResult

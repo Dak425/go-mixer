@@ -1,4 +1,4 @@
-package structs
+package mixerstructs
 
 type ProgressionStatisticCollection []ProgressionStatistic
 type ProgressionStatisticStringMap map[string]ProgressionStatistic

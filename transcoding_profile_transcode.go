@@ -1,4 +1,4 @@
-package structs
+package mixerstructs
 
 type TranscodingProfileTranscodeCollection []TranscodingProfileTranscode
 type TranscodingProfileTranscodeStringMap map[string]TranscodingProfileTranscode

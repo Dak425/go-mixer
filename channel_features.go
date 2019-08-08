@@ -1,4 +1,4 @@
-package structs
+package mixerstructs
 
 type ChannelFeaturesCollection []ChannelFeatures
 type ChannelFeaturesStringMap map[string]ChannelFeatures

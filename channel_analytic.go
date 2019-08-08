@@ -1,4 +1,4 @@
-package structs
+package mixerstructs
 
 type ChannelAnalyticCollection []ChannelAnalytic
 type ChannelAnalyticStringMap map[string]ChannelAnalytic

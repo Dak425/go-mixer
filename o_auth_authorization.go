@@ -1,4 +1,4 @@
-package structs
+package mixerstructs
 
 type OAuthAuthorizationCollection []OAuthAuthorization
 type OAuthAuthorizationStringMap map[string]OAuthAuthorization

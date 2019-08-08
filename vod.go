@@ -1,4 +1,4 @@
-package structs
+package mixerstructs
 
 type VODCollection []VOD
 type VODStringMap map[string]VOD

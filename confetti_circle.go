@@ -1,4 +1,4 @@
-package structs
+package mixerstructs
 
 type ConfettiCircleCollection []ConfettiCircle
 type ConfettiCircleStringMap map[string]ConfettiCircle

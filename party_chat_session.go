@@ -1,4 +1,4 @@
-package structs
+package mixerstructs
 
 type PartyChatSessionCollection []PartyChatSession
 type PartyChatSessionStringMap map[string]PartyChatSession

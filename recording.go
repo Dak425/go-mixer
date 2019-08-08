@@ -1,4 +1,4 @@
-package structs
+package mixerstructs
 
 type RecordingCollection []Recording
 type RecordingStringMap map[string]Recording

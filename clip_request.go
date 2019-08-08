@@ -1,4 +1,4 @@
-package structs
+package mixerstructs
 
 type ClipRequestCollection []ClipRequest
 type ClipRequestStringMap map[string]ClipRequest

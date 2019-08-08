@@ -1,4 +1,4 @@
-package structs
+package mixerstructs
 
 type ChatUserCollection []ChatUser
 type ChatUserStringMap map[string]ChatUser

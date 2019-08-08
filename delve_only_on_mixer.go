@@ -1,4 +1,4 @@
-package structs
+package mixerstructs
 
 type DelveOnlyOnMixerCollection []DelveOnlyOnMixer
 type DelveOnlyOnMixerStringMap map[string]DelveOnlyOnMixer

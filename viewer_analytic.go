@@ -1,4 +1,4 @@
-package structs
+package mixerstructs
 
 type ViewerAnalyticCollection []ViewerAnalytic
 type ViewerAnalyticStringMap map[string]ViewerAnalytic

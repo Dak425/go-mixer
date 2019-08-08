@@ -1,4 +1,4 @@
-package structs
+package mixerstructs
 
 type RedeemableCollection []Redeemable
 type RedeemableStringMap map[string]Redeemable

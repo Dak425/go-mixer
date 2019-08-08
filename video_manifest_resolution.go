@@ -1,4 +1,4 @@
-package structs
+package mixerstructs
 
 type VideoManifestResolutionCollection []VideoManifestResolution
 type VideoManifestResolutionStringMap map[string]VideoManifestResolution

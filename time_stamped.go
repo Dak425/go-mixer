@@ -1,4 +1,4 @@
-package structs
+package mixerstructs
 
 type TimeStampedCollection []TimeStamped
 type TimeStampedStringMap map[string]TimeStamped

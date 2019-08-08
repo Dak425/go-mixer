@@ -1,4 +1,4 @@
-package structs
+package mixerstructs
 
 type AchievementCollection []Achievement
 type AchievementStringMap map[string]Achievement

@@ -1,4 +1,4 @@
-package structs
+package mixerstructs
 
 type OAuthClientCollection []OAuthClient
 type OAuthClientStringMap map[string]OAuthClient

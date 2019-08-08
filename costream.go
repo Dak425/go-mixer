@@ -1,4 +1,4 @@
-package structs
+package mixerstructs
 
 type CostreamCollection []Costream
 type CostreamStringMap map[string]Costream

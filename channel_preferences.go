@@ -1,4 +1,4 @@
-package structs
+package mixerstructs
 
 type ChannelPreferencesCollection []ChannelPreferences
 type ChannelPreferencesStringMap map[string]ChannelPreferences

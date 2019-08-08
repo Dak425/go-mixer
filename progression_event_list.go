@@ -1,4 +1,4 @@
-package structs
+package mixerstructs
 
 type ProgressionEventListCollection []ProgressionEventList
 type ProgressionEventListStringMap map[string]ProgressionEventList

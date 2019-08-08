@@ -1,4 +1,4 @@
-package structs
+package mixerstructs
 
 type OAuthLinkCollection []OAuthLink
 type OAuthLinkStringMap map[string]OAuthLink

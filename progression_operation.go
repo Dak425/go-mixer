@@ -1,4 +1,4 @@
-package structs
+package mixerstructs
 
 type ProgressionOperationCollection []ProgressionOperation
 type ProgressionOperationStringMap map[string]ProgressionOperation

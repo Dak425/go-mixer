@@ -1,4 +1,4 @@
-package structs
+package mixerstructs
 
 type EmojiRankAnalyticCollection []EmojiRankAnalytic
 type EmojiRankAnalyticStringMap map[string]EmojiRankAnalytic

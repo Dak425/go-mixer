@@ -1,4 +1,4 @@
-package structs
+package mixerstructs
 
 type UserPreferencesCollection []UserPreferences
 type UserPreferencesStringMap map[string]UserPreferences

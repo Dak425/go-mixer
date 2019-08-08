@@ -1,4 +1,4 @@
-package structs
+package mixerstructs
 
 type StreamSessionsAnalyticCollection []StreamSessionsAnalytic
 type StreamSessionsAnalyticStringMap map[string]StreamSessionsAnalytic

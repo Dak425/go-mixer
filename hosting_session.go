@@ -1,4 +1,4 @@
-package structs
+package mixerstructs
 
 type HostingSessionCollection []HostingSession
 type HostingSessionStringMap map[string]HostingSession

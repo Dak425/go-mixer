@@ -1,4 +1,4 @@
-package structs
+package mixerstructs
 
 type ShareCollection []Share
 type ShareStringMap map[string]Share

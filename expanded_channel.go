@@ -1,4 +1,4 @@
-package structs
+package mixerstructs
 
 type ExpandedChannelCollection []ExpandedChannel
 type ExpandedChannelStringMap map[string]ExpandedChannel

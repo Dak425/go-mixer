@@ -1,4 +1,4 @@
-package structs
+package mixerstructs
 
 type PlayerLayoutCollection []PlayerLayout
 type PlayerLayoutStringMap map[string]PlayerLayout

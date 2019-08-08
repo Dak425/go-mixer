@@ -1,4 +1,4 @@
-package structs
+package mixerstructs
 
 type CPMAnalyticCollection []CPMAnalytic
 type CPMAnalyticStringMap map[string]CPMAnalytic

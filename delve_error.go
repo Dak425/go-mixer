@@ -1,4 +1,4 @@
-package structs
+package mixerstructs
 
 type DelveErrorCollection []DelveError
 type DelveErrorStringMap map[string]DelveError

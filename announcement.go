@@ -1,4 +1,4 @@
-package structs
+package mixerstructs
 
 type AnnouncementCollection []Announcement
 type AnnouncementStringMap map[string]Announcement

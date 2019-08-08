@@ -1,4 +1,4 @@
-package structs
+package mixerstructs
 
 type UserLogCollection []UserLog
 type UserLogStringMap map[string]UserLog

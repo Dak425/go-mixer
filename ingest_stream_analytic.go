@@ -1,4 +1,4 @@
-package structs
+package mixerstructs
 
 type IngestStreamAnalyticCollection []IngestStreamAnalytic
 type IngestStreamAnalyticStringMap map[string]IngestStreamAnalytic

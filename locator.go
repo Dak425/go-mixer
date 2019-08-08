@@ -1,4 +1,4 @@
-package structs
+package mixerstructs
 
 type LocatorCollection []Locator
 type LocatorStringMap map[string]Locator

@@ -1,4 +1,4 @@
-package structs
+package mixerstructs
 
 type NotificationPreferenceCollection []NotificationPreference
 type NotificationPreferenceStringMap map[string]NotificationPreference

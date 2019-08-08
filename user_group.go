@@ -1,4 +1,4 @@
-package structs
+package mixerstructs
 
 type UserGroupCollection []UserGroup
 type UserGroupStringMap map[string]UserGroup

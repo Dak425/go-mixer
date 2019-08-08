@@ -1,4 +1,4 @@
-package structs
+package mixerstructs
 
 type InteractiveControlsCollection []InteractiveControls
 type InteractiveControlsStringMap map[string]InteractiveControls

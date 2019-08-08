@@ -1,4 +1,4 @@
-package structs
+package mixerstructs
 
 type InteractiveJoyStickAnalysisCollection []InteractiveJoyStickAnalysis
 type InteractiveJoyStickAnalysisStringMap map[string]InteractiveJoyStickAnalysis

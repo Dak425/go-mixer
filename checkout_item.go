@@ -1,4 +1,4 @@
-package structs
+package mixerstructs
 
 type CheckoutItemCollection []CheckoutItem
 type CheckoutItemStringMap map[string]CheckoutItem

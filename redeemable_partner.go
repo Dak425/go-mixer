@@ -1,4 +1,4 @@
-package structs
+package mixerstructs
 
 type RedeemablePartnerCollection []RedeemablePartner
 type RedeemablePartnerStringMap map[string]RedeemablePartner

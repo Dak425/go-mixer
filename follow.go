@@ -1,4 +1,4 @@
-package structs
+package mixerstructs
 
 type FollowCollection []Follow
 type FollowStringMap map[string]Follow

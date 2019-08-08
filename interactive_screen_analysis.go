@@ -1,4 +1,4 @@
-package structs
+package mixerstructs
 
 type InteractiveScreenAnalysisCollection []InteractiveScreenAnalysis
 type InteractiveScreenAnalysisStringMap map[string]InteractiveScreenAnalysis

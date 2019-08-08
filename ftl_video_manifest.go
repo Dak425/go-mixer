@@ -1,4 +1,4 @@
-package structs
+package mixerstructs
 
 type FTLVideoManifestCollection []FTLVideoManifest
 type FTLVideoManifestStringMap map[string]FTLVideoManifest

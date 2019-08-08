@@ -1,4 +1,4 @@
-package structs
+package mixerstructs
 
 type ConfettiImageCollection []ConfettiImage
 type ConfettiImageStringMap map[string]ConfettiImage

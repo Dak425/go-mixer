@@ -1,4 +1,4 @@
-package structs
+package mixerstructs
 
 type ClipPropertiesCollection []ClipProperties
 type ClipPropertiesStringMap map[string]ClipProperties

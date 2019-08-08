@@ -1,4 +1,4 @@
-package structs
+package mixerstructs
 
 type SubRevenueAnalyticCollection []SubRevenueAnalytic
 type SubRevenueAnalyticStringMap map[string]SubRevenueAnalytic

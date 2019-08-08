@@ -1,4 +1,4 @@
-package structs
+package mixerstructs
 
 type DelveBackgroundCollection []DelveBackground
 type DelveBackgroundStringMap map[string]DelveBackground

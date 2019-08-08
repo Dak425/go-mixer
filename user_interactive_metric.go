@@ -1,4 +1,4 @@
-package structs
+package mixerstructs
 
 type UserInteractiveMetricCollection []UserInteractiveMetric
 type UserInteractiveMetricStringMap map[string]UserInteractiveMetric

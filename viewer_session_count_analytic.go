@@ -1,4 +1,4 @@
-package structs
+package mixerstructs
 
 type ViewerSessionCountAnalyticCollection []ViewerSessionCountAnalytic
 type ViewerSessionCountAnalyticStringMap map[string]ViewerSessionCountAnalytic

@@ -1,4 +1,4 @@
-package structs
+package mixerstructs
 
 type ProgressionChannelViewerStorageLoadResultCollection []ProgressionChannelViewerStorageLoadResult
 type ProgressionChannelViewerStorageLoadResultStringMap map[string]ProgressionChannelViewerStorageLoadResult

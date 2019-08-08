@@ -1,4 +1,4 @@
-package structs
+package mixerstructs
 
 type UserWithChannelCollection []UserWithChannel
 type UserWithChannelStringMap map[string]UserWithChannel

@@ -1,4 +1,4 @@
-package structs
+package mixerstructs
 
 type WebhookCollection []Webhook
 type WebhookStringMap map[string]Webhook
